@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: gray;
+    background-position: center;
+    object-fit: cover;
+
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: white
+}
+
+/* THIS IS FOR THE TEXT IN THE VIDEO BACKGROUND */
+.text {
+    position: relative;
+    z-index: 10;
+    top: 340px;
+    left: 80px;
+    cursor: default;
+}
+
+.text h2 {
+    font-size: 5em;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1em;
+    text-transform: uppercase;
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+.text h3 {
+    font-size: 4em;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.text p {
+    font-size: 1.1em;
+    color: #fff;
+    margin: 20px 0;
+    font-weight: 400;
+    max-width: 700px;
+}
+
+.text ul {
+    font-size: 1.2em;
+    color: #fff;
+    margin: 20px 0;
+    font-weight: 400;
+    max-width: 700px;
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+.text ol {
+    font-size: 1.1em;
+    color: #fff;
+    margin: 20px 0;
+    font-weight: 400;
+    max-width: 700px;
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+.text a {
+    display: inline-block;
+    font-size: 1em;
+    background: #fff;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #111;
+    letter-spacing: 2px;
+    transition: 0.2s;
+}
+
+.text a:hover {
+    letter-spacing: 6px;
+}
+
+/* FOR VIDEO BACKGROUND*/
+
+.video-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Adjust as needed */
+    overflow: hidden;
+}
+
+.video-background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(40%);
+}
+
+/*POSITION OF EACH BACKGROUND IMAGE*/
+.background-image {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    filter: brightness(40%);
+}
+
+.background-image-01 {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    filter: brightness(80%);
+}
+
+/* THIS IS THE MAIN HEADER*/
+.header-main {
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+
+    /* same position when scrolling*/
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    position: fixed;
+
+}
+
+/* FOR LOGO */
+.header-main-logo {
+    width: fit-content;
+    height: 100%;
+    padding-left: 50px;
+    display: flex;
+}
+
+.header-main-logo img {
+    height: 40px;
+    align-self: center;
+}
+
+/* NAVIGATION BAR */
+
+.header-main-nav {
+    width: fit-content;
+    height: 100%;
+}
+
+.header-main-nav ul {
+    list-style: none;
+    margin-left: 40px;
+}
+
+.header-main-nav ul li {
+    position: relative;
+    display: inline;
+    float: left;
+
+}
+
+.header-main-nav ul li a {
+    padding: 0 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 60px;
+    text-decoration: none;
+    display: block;
+    height: 100%;
+}
+
+.header-main-nav ul li a:hover {
+    color: orange;
+
+}
+
+/*DROPDOWN MENU*/
+
+.header-main-nav ul li ul.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -15px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.header-main-nav ul li:hover ul.dropdown-menu {
+    display: block;
+}
+
+.header-main-nav ul li ul.dropdown-menu li {
+    display: block;
+    width: 150px;
+}
+
+.header-main-nav ul li ul.dropdown-menu li a {
+    padding: 8px 15px;
+    color: black;
+    text-decoration: none;
+}
+
+.header-main-nav ul li ul.dropdown-menu li a:hover {
+    background-color: #f4f4f4;
+    transform: scale(1.2);
+}
+
+/*DROPDOWN 2-MEGA MENU*/
+
+/* Navbar container */
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+/*MEGA Dropdown button CONTENT*/
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 21px 16px;
+    background-color: inherit;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin: 0;
+
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+    cursor: pointer;
+    color: orange;
+
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 70%;
+    left: 16%;
+    top: 60px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    font-size: 17px;
+    z-index: 1;
+}
+
+/* Mega Menu header, if needed
+.dropdown-content .header {
+    background: red;
+    padding: 16px;
+    color: white;
+}*/
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* COLUMN PART OF MEGA MENU/ABOUT US */
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 20px;
+    height: 230px;
+    text-align: center;
+    position: relative;
+    background-color: rgb(228, 197, 197);
+}
+
+.column:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: 0;
+    height: calc(80% - 5px);
+    width: 2px;
+    background-color: gray;
+}
+
+.column img {
+    position: static;
+    max-width: 80%;
+    max-height: auto;
+    transform: none;
+    margin-left: 20px;
+    margin-top: 30px;
+    left: 0;
+    top: 0;
+}
+
+.column a {
+    float: none;
+    color: black;
+    padding: 15px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.column a:hover {
+    background-color: #ddd;
+}
+
+.column,
+.column a {
+    font-family: "Arial", sans-serif;
+
+    /* Change "Arial" to your desired font */
+}
+
+/* Clear floats after the columns
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+*/
+
+/*SOCIAL MEDIA LOGO */
+
+.header-main-social {
+    width: fit-content;
+    height: 100%;
+    padding-right: 50px;
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+}
+
+.header-main-social-fb {
+    width: 25px;
+    height: 25px;
+    background-image: url("facebook1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-main-social-fb:hover {
+    background-image: url("facebook-color.png");
+    transform: scale(1.4);
+
+
+}
+
+.header-main-social-insta {
+    width: 25px;
+    height: 25px;
+    background-image: url("instagram1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-main-social-insta:hover {
+
+    background-image: url("instagram-color.png");
+    transform: scale(1.4);
+
+}
+
