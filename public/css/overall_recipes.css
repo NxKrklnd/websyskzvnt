@@ -1,0 +1,261 @@
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-container-Subpages,
+.nav-container-Subpages a,
+.nav-container-Subpages .icons-Subpages i {
+    color: black;
+}
+
+.nav-container-Subpages {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-right: 30px;
+    padding-left: 40px;
+    height: 80px;
+    color: #fff;
+    z-index: 1000;
+}
+
+.nav-container-Subpages ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    font-size: 16px;
+}
+
+.nav-container-Subpages ul li {
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 3px 10px;
+    border-radius: 5px;
+}
+
+.nav-container-Subpages ul li:hover,
+.nav-container-Subpages .icons-Subpages i:hover {
+    background-color: rgba(186, 166, 166, 0.5);
+}
+
+.logo-Subpages {
+    width: 90px;
+    height: 30px;
+    cursor: pointer;
+    filter: brightness(50) invert(1);
+}
+
+.nav-container-Subpages .icons-Subpages {
+    display: flex;
+    font-size: 25px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.nav-container-Subpages .icons-subpages i {
+    border-radius: 50%;
+    padding: 3px;
+    transition: 0.5s;
+}
+
+/*----------------------------------------------------------*/
+
+:root {
+    --grey-300: #cbd5e1;
+    --headingFont: 'Roboto', sans-serif;
+    --bodyFont: 'Nunito', sans-serif;
+    --letterSpacing: 1px;
+    --max-width: 1120px;
+}
+
+body {
+    font-family: var(--bodyFont);
+    font-weight: 400;
+    line-height: 1.75;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+    max-width: 50em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+    margin-bottom: 1.38rem;
+    font-family: var(--headingFont);
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: var(--letterSpacing);
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 3.052rem;
+}
+
+h2 {
+    font-size: 2.441rem;
+}
+
+h3 {
+    font-size: 1.953rem;
+}
+
+h4 {
+    font-size: 1.563rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.img-Subpages {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.page-Subpages {
+    width: 90vw;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.page-Subpages {
+    padding-top: 10rem;
+}
+
+.page-footer-Subpages {
+    text-align: center;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--black);
+    color: var(--white);
+}
+
+.page-footer-Subpages h5 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.page-footer-Subpages p {
+    margin-bottom: 0;
+}
+
+.page-footer-Subpages a {
+    color: var(--primary-500);
+}
+
+.recipe-hero-Subpages {
+    display: grid;
+    gap: 3rem;
+}
+
+.recipe-icons-Subpages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+    text-align: justify;
+}
+
+.recipe-icons-Subpages i {
+    font-size: 1.5rem;
+}
+
+.recipe-icons-Subpages h5,
+.recipe-icons-Subpages p {
+    margin-bottom: 0;
+    font-size: 0.85em;
+}
+
+.recipe-icons-Subpages p {
+    color: var(--grey-600);
+}
+
+@media screen and (min-width: 992px) {
+    .recipe-hero-Subpages {
+        grid-template-columns: 4fr 5fr;
+        align-items: center;
+    }
+}
+
+.recipe-content-Subpages {
+    padding: 3rem 0;
+    display: grid;
+    gap: 2rem 5rem;
+}
+
+@media screen and (min-width: 992px) {
+    .recipe-content-Subpages {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.single-instruction-Subpages header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.single-instruction-Subpages header p {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--primary-500);
+    margin-bottom: 0;
+}
+
+.single-instruction-Subpages>p {
+    color: var(--grey-700);
+}
+
+.single-instruction-Subpages header div {
+    height: 2px;
+    background: var(--grey-300);
+}
+
+.second-column-Subpages {
+    display: grid;
+    row-gap: 2rem;
+}
+
+.single-ingredient-Subpages {
+    border-bottom: 2px solid var(--grey-300);
+    padding-bottom: 0.75rem;
+    color: var(--grey-700);
+}
+
+.single-tool-Subpages {
+    border-bottom: 2px solid var(--grey-300);
+    padding-bottom: 0.75rem;
+    color: var(--primary-500);
+    text-transform: capitalize;
+}

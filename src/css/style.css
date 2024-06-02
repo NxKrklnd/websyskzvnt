@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-container {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-right: 30px;
+    padding-left: 40px;
+    height: 80px;
+    color: #fff;
+    z-index: 1000;
+}
+
+.nav-container ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    font-size: 16px;
+}
+
+.nav-container ul li {
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 3px 10px;
+    border-radius: 5px;
+}
+
+.nav-container ul li:hover,
+.nav-container .icons i:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    width: 90px;
+    height: 30px;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+}
+
+.nav-container .icons {
+    display: flex;
+    font-size: 25px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.nav-container .icons i {
+    border-radius: 50%;
+    padding: 3px;
+    transition: 0.5s;
+}
+
+.pages {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    text-align: center;
+    flex-direction: column;
+}
+
+.pages li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    justify-content: space-between;
+    padding-top: 150px;
+    padding-bottom: 10px;
+    color: #fff;
+    scroll-snap-align: start;
+}
+
+.pages li video,
+.pages li img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.page-info h1 {
+    letter-spacing: 1px;
+    font-size: 40px;
+}
+
+.page-info h1,
+.page-info h3 {
+    font-weight: 500;
+}
+
+.page-info.model-x {
+    color: #fff;
+}
+
+.page-info.model-x p {
+    font-size: 12px;
+}
+
+/* FOR THE FIRST/MAIN PAGE BUTTONS */
+
+.page-footer .first-page-button {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.page-footer .first-page-button button {
+    font-size: 13px;
+    padding: 7px 80px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* FOR BUTTONS IN EACH PAGE except the main */
+
+.page-footer .buttons {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.page-footer .buttons button {
+    font-size: 13px;
+    padding: 7px 80px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* for the first page or main page buttons */
+
+.page-footer .first-page-button button:first-child {
+    background-color: rgba(255, 255, 255, 0.75);
+    color: black;
+}
+
+.page-footer .first-page-button button:last-child {
+    background-color: rgba(34, 34, 34, 0.8);
+    color: white;
+}
+
+/* for other pages as one buttons except the main */
+
+.page-footer .buttons.all button:first-child {
+    background-color: rgba(255, 255, 255, 0.75);
+    color: #333;
+}
+
+.page-footer .buttons.all button:last-child {
+    background-color: rgba(34, 34, 34, 0.8);
+    color: #fff;
+}
+
+.page-footer p,
+.page-footer a {
+    font-size: 12px;
+    color: #fff;
+}
+
+.page-footer .buttons.last-page button {
+    background-color: transparent;
+    color: #fff;
+    border: 3px solid #fff;
+}
+
+#first-page,
+#first-page-part {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s;
+}
