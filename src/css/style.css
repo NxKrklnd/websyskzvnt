@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
-
 * {
     font-family: "Poppins", sans-serif;
     margin: 0;
@@ -10,6 +8,12 @@
 html {
     overflow-x: hidden;
     scroll-snap-type: y mandatory;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 a {
@@ -29,28 +33,11 @@ a {
     height: 80px;
     color: #fff;
     z-index: 1000;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
 }
 
-.nav-container ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    font-size: 16px;
-}
-
-.nav-container ul li {
-    cursor: pointer;
-    transition: 0.5s;
-    padding: 3px 10px;
-    border-radius: 5px;
-}
-
-.nav-container ul li:hover,
-.nav-container .icons i:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.logo {
+.nav-container .logo {
     width: 90px;
     height: 30px;
     cursor: pointer;
@@ -58,7 +45,7 @@ a {
 }
 
 .nav-container .icons {
-    display: flex;
+    display: none;
     font-size: 25px;
     gap: 10px;
     cursor: pointer;
@@ -69,6 +56,73 @@ a {
     padding: 3px;
     transition: 0.5s;
 }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    font-size: 16px;
+}
+
+.nav-links li {
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 3px 10px;
+    border-radius: 5px;
+}
+
+.nav-links li:hover,
+.nav-container .icons i:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        flex-direction: column;
+        background-color: rgba(51, 51, 51, 0.8);
+        backdrop-filter: blur(10px);
+        width: 250px;
+        height: 100vh;
+        gap: 20px;
+        padding-top: 80px;
+        transition: left 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    .nav-links.open {
+        left: 0;
+    }
+
+    .nav-container .icons {
+        display: flex;
+    }
+
+    .nav-links .close-button {
+        display: none;
+    }
+
+    .nav-links.open .close-button {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+        cursor: pointer;
+    }
+}
+
+/* Hide close button on larger screens */
+@media (min-width: 769px) {
+    .nav-links .close-button {
+        display: none;
+    }
+}
+
+/* EACH SECTION STYLING------------------------------------------------------------ */
 
 .pages {
     display: flex;
@@ -104,7 +158,7 @@ a {
 
 .page-info h1 {
     letter-spacing: 1px;
-    font-size: 40px;
+    font-size: 50px;
 }
 
 .page-info h1,
@@ -121,7 +175,6 @@ a {
 }
 
 /* FOR THE FIRST/MAIN PAGE BUTTONS */
-
 .page-footer .first-page-button {
     margin-bottom: 30px;
     display: flex;
@@ -137,8 +190,44 @@ a {
     cursor: pointer;
 }
 
-/* FOR BUTTONS IN EACH PAGE except the main */
+.page-footer .first-page-button button:first-child {
+    background-color: rgba(255, 255, 255, 0.75);
+    color: black;
+}
 
+.page-footer .first-page-button button:last-child {
+    background-color: rgba(34, 34, 34, 0.8);
+    color: white;
+}
+
+/* Responsive styles for first/main page buttons */
+@media (max-width: 768px) {
+    .page-footer .first-page-button {
+        margin-bottom: 65px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .page-footer .first-page-button button {
+        width: 75%;
+        font-size: 17px;
+        padding: 10px 20px;
+    }
+
+    .page-footer .first-page-button button:first-child {
+        background-color: #fff;
+        color: #333;
+    }
+
+    .page-footer .first-page-button button:last-child {
+        background-color: #333;
+        color: #fff;
+    }
+}
+
+/* FOR BUTTONS IN EACH PAGE except the main */
 .page-footer .buttons {
     margin-bottom: 30px;
     display: flex;
@@ -154,34 +243,23 @@ a {
     cursor: pointer;
 }
 
-/* for the first page or main page buttons */
-
-.page-footer .first-page-button button:first-child {
-    background-color: rgba(255, 255, 255, 0.75);
-    color: black;
-}
-
-.page-footer .first-page-button button:last-child {
-    background-color: rgba(34, 34, 34, 0.8);
-    color: white;
-}
-
 /* for other pages as one buttons except the main */
-
 .page-footer .buttons.all button:first-child {
     background-color: rgba(255, 255, 255, 0.75);
     color: #333;
 }
 
 .page-footer .buttons.all button:last-child {
-    background-color: rgba(34, 34, 34, 0.8);
-    color: #fff;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: black;
 }
 
 .page-footer p,
 .page-footer a {
-    font-size: 12px;
+    font-size: 13px;
     color: #fff;
+    margin-bottom: 20px;
+
 }
 
 .page-footer .buttons.last-page button {
@@ -195,4 +273,32 @@ a {
     opacity: 0;
     transform: translateY(50px);
     transition: 1s;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .page-info h1 {
+        font-size: 30px;
+    }
+
+    .page-footer .buttons button {
+        font-size: 17px;
+        padding: 10px 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-info h1 {
+        font-size: 35px;
+    }
+
+    .page-footer .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .page-footer .buttons button {
+        width: 75%;
+        margin-bottom: 10px;
+    }
 }

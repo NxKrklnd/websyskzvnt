@@ -422,3 +422,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 >>>>>>> cbde870 (Initialize project using Create React App)
+
+.codegpt
